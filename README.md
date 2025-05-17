@@ -40,7 +40,7 @@
 ---
 
 ## 🌐 Live Demo
-> **[Try GPT4Unlimited Live](#)**  
+> **[Try GPT4Unlimited Live](https://gpt-4-unlimited.vercel.app/)**  
 *(Add your deployment link here)*
 
 ---
@@ -88,12 +88,7 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-## 🙏 Acknowledgements
-- [OpenAI](https://openai.com/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Formspree](https://formspree.io/)
+ 
+ 
 
----
-
-> Made with ❤️ by Ankit Sharma and contributors. 
+> Made with ❤️ by Ankit Sharma. 
