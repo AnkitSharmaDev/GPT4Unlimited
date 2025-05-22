@@ -9,7 +9,7 @@ let selectedModel = 'provider-2/gpt-4.1';
  
 
 // Important : change this to false when the services are available .....
-const isApiDown = false;
+const isApiDown = true;
 
 const apiDownBanner = document.getElementById('api-alert-banner');
 
