@@ -7,7 +7,9 @@ let selectedModel = 'provider-2/gpt-4.1';
 
 // Services down message :
 // Toggle to true when API is down
-const isApiDown = true;
+
+// Important : change this to false when the services are available 
+const isApiDown = false;
 
 const apiDownBanner = document.getElementById('api-alert-banner');
 
