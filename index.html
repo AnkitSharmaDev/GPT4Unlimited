@@ -148,6 +148,16 @@
             opacity: 1;
             pointer-events: auto;
         }
+        .api-down-message {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #f87171;
+    padding: 12px;
+    border-radius: 16px;
+    font-weight: bold;
+    white-space: pre-line;
+}
+
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -201,6 +211,10 @@
       <span>⚠️</span> <b>Notice:</b> Sometimes the AI may not respond or may show errors. This can happen due to high traffic or API limits, as we are using GPT-4 which is not free. Please be patient and try again later. Thank you for your understanding and cooperation!
     </div>
   </section>
+    <div id="api-alert-banner" class="hidden bg-red-600 text-white text-sm p-3 text-center font-semibold shadow-md z-50">
+    🚨 Service Notice: Our servers are currently under heavy load. API is down temporarily. Thank you for your support and patience. ❤️
+</div>
+
 
     <!-- Chat Section -->
     <section id="chat" class="container mx-auto max-w-4xl p-4 flex flex-col fade-in">
