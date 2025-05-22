@@ -5,6 +5,24 @@ const messages = [];
 let isGenerating = false;
 let selectedModel = 'provider-2/gpt-4.1';
 
+// Services down message :
+// Toggle to true when API is down
+const isApiDown = true;
+
+const apiDownBanner = document.getElementById('api-alert-banner');
+
+const apiDownChatMessage = `
+🚧 Service Temporarily Unavailable 🚧
+
+Thank you so much for your support, everyone!
+Due to very high traffic, it's difficult to manage the load.
+The API is currently under maintenance.
+We appreciate your patience and support ❤️
+
+— GPT4Unlimited Team
+`;
+
+
 // DOM Elements
 const messagesDiv = document.getElementById('messages');
 const userInput = document.getElementById('user-input');
@@ -101,14 +119,37 @@ async function generateResponse(prompt) {
 }
 
 // Handle user input
+// async function handleSend() {
+//     const prompt = userInput.value.trim();
+//     if (!prompt || isGenerating) return;
+//     addMessage('user', prompt);
+//     messages.push({ role: 'user', content: prompt });
+//     userInput.value = '';
+//     await generateResponse(prompt);
+// }
 async function handleSend() {
     const prompt = userInput.value.trim();
     if (!prompt || isGenerating) return;
+
+    if (isApiDown) {
+        const warningDiv = document.createElement('div');
+        warningDiv.className = 'mb-4 text-left chat-bubble-anim';
+        warningDiv.innerHTML = `
+            <div class="api-down-message inline-block max-w-[80%] ml-0">
+                ${apiDownChatMessage}
+            </div>
+        `;
+        messagesDiv.appendChild(warningDiv);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        return;
+    }
+
     addMessage('user', prompt);
     messages.push({ role: 'user', content: prompt });
     userInput.value = '';
     await generateResponse(prompt);
 }
+
 
 // Event Listeners
 sendBtn.addEventListener('click', handleSend);
@@ -186,3 +227,6 @@ if (feedbackForm) {
         });
     });
 } 
+if (isApiDown && apiDownBanner) {
+    apiDownBanner.classList.remove('hidden');
+}
